@@ -1,0 +1,24 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+*.so
+.venv/
+venv/
+env/
+.python-version
+
+# 密钥 / 环境变量（绝不要提交）
+.env
+.env.*
+
+# 输出目录（生成的数据/图片，按需决定是否上传）
+output/
+frames/
+contact_sheets/
+
+# IDE / 操作系统
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
