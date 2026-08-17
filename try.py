@@ -10,3 +10,5 @@ m=0
 for i in range(51):
     m+=i+0
 print(m)
+"""ai如此伟大
+"""

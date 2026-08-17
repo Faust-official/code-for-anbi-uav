@@ -44,6 +44,8 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--n", type=int, default=16, help="用多少张图")
     parser.add_argument("--device", default="auto", help="auto/cuda/cpu")
+    parser.add_argument("--cfg", default="models/yolov5s.yaml",
+                        help="模型配置，如 models/anbinet_light.yaml")
     args = parser.parse_args()
 
     # 1) 复制少量 图片+标签 到 _smoke
@@ -94,7 +96,7 @@ def main():
         "--exist-ok",
     ]
     # 从零训练必须指定模型结构（本冒烟测试不用预训练权重）
-    cmd += ["--cfg", os.path.join("models", "yolov5s.yaml")]
+    cmd += ["--cfg", args.cfg]
     print("运行:", " ".join(cmd))
     try:
         subprocess.check_call(cmd, cwd=YOLOV5)
